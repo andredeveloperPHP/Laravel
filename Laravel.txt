@@ -1,0 +1,90 @@
+1° de tudo: verificando se esta conectado ao banco de dados:
+- php artisan migrate:install:
+sucessfully.   Conectado ao banco de Dados.
+------------------------------------------------------------
+2°
+Criando minhas Migrations: (files) na pasta migrations.
+(que serão as tabelas no banco de dados)
+
+php artisan make:migration  Create_table_stores;
+-> crie as estrutura da tabela da sua base.
+-> defina as chave estrangeiras
+-------------------------------------------------------------
+
+php artisan make:migration Create_products_table.
+->cria as estruturas da tabela da sua base
+-> defina as chaves estrangeiras
+
+--------------------------------------------------------------
+Rodando a Migration:
+
+php artisan migrate;
+executando esse comando, as tabelas são criadas no banco. vazias sem valores.
+---------------------------------------------------------------
+
+-------------------Comandos adicionais para as Migrations-----------
+
+revertendo:
+
+php artisan migrate:rollback
+esse Rollback ele volta o ultimo passo.
+
+(php artisan migrate:rollback --step=3)
+com esse comando ele faz eu voltar 03 passos
+
+re-executar as migrações apagando as tabelas
+php artisan migrate:fresh
+
+re-executar as migrações sem apagar as tabelas
+php artisan migrate:refresh
+
+Rollback de tudo fazendo um reset
+php artisan migrate:reset
+
+Fazer um refresh passando passos:
+php artisan migrate::refresh --step=2
+
+------------------------------------------------------------------
+SEEDS: pasta dentro de Database
+->As SEEDS elas permitem que crie dados para nossas tabelas
+
+Para criar Seeder:
+php artisan make:seeder UsersTableSeeder
+
+O arquivo será criado dentro da pasta Seeds!
+
+-------------------------------------------------------------------
+ dentro do Arquivo UserTableSeeder:
+DB::table(nome da tabela)->insert   //metodo insert:
+
+DB::table('users')->insert ();
+copia e cola da pasta UserFactory o array de dados e edita-lo
+
+-------------------------------------------------------------------
+Executando a Seed:
+php artisan db:seed
+
+(Database seeding completed successfully);
+
+NOTA: databaseSeeder.php fazer a chamada: $this->call(UsersTableSeeder::class);
+ou outra classe:  $this->call(UserTableSeeder::class); que tiver;
+
+DADOS ADICIONADOS COM SUCESSO A TABELA users;
+Dica: php artisan migrate:refresh --seed;
+
+ele irá refaz e adicionar as seeds!
+--------------------------------------------------------------------
+O que são Factorys:
+
+As factorys são auxiliares para nossas SEEDs:
+As factorys definem modelos para que possa fazer criação de uma massa grande de dados
+
+factory(\App\User::class, 40)->create() definição do namespace, quantidade de registros, e o metodo create.
+
+serão criados 40 usuarios com os seeds
+COMANDO:
+php artisan migrate:refresh --seed
+---------------------------------------------------------------------
+
+
+ 

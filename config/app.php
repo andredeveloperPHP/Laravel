@@ -229,3 +229,5 @@ return [
     ],
 
 ];
+
+$_SESSION[''] = '10 MIINUTOS';

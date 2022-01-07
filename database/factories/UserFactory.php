@@ -17,6 +17,8 @@ use Illuminate\Support\Str;
 |
 */
 
+// Temos aqui uma definição:
+
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
@@ -26,3 +28,16 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+
+/*
+|*--------------------------------------------------------------------------------------
+| As factorys definem modelos para que possa fazer criação de uma massa grande de dados 
+| Uma vez que tenho definição de modelo que eu quero.
+| Posso criar 100 usuarios de uma vez só
+| Quem ira rodar dentro de um seed;
+| exemplo basico de utilização dentro do Seed:
+| definição do namespace, quantidade de registros, e o metodo create.
+|  factory(\App\User::class, 40)->create()
+|---------------------------------------------------------------------------------------
+ */

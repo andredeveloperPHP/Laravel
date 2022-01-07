@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Schema;
 class CreateUsersTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Executando as Migrações.
      *
      * @return void
      */
-    public function up()
+    public function up() //executa o metodo up
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverso das Migrações.
      *
      * @return void
      */
