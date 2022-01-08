@@ -28,7 +28,7 @@ class UserTableSeeder extends Seeder
     */
     //Executando uma factory: (Userfactory)
 
-    //factory(\App\User::class, 40)->create();
+    factory(\App\User::class, 40)->create();
     }
 
 }
