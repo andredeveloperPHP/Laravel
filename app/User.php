@@ -51,6 +51,7 @@ class User extends Authenticatable
     | tem uma loja, no caso hasOne->(nome da loja no primeiro parametro);          |
     |                                                                              |
     \*-----------------------------------------------------------------------------|
+*/
 
 
 }

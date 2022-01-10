@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $fillable = ['name','description','body','price','slug'];
     public function store(){
         //Esse Produto vai pertencer a quem: a Loja Store.
         return $this->belongsTo(Store::class);  //Um produto pode ter em varias lojas 
 
+    }
+
+    public function categories(){
+        return $this->belongsToMany(category::class); //que significa muitos com quem, com category::class
     }
 
     
