@@ -10,8 +10,8 @@ $factory->define(\App\Store::class, function (Faker $faker) {
          //Gerando as factorys para Auxiliar nas Nossas Seeds   
         'name' => $faker->name,
         'description' => $faker->sentence,
-        'phone' => $faker->phoneNumber,
-        'mobile_phone' => $faker->phone,
+        'phone' => $faker->phoneNumber(),
+        'mobile_phone' => $faker->phoneNumber(),
         'slug' => $faker->slug,
      
     ]; 

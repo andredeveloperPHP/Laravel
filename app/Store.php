@@ -16,6 +16,8 @@ class Store extends Model
       return $this->hasMany(Product::class); //tem muitos passando o model Objeto Product.
   }
 }
+
+
 /*----------------------------------------------------------------------------------|
 | faço o inverso de lá de Store para User, O User vai ser dono da Loja, então       |   
 | Essa loja vai pertencer ao usuario, metodo belongTo que vai receber um Model User |
@@ -35,5 +37,7 @@ class Store extends Model
 | -> Store->store                                                                 |
 | ->ele vai procurar como Products no banco, Automaticamente                      |
 | ->Product->Products                                                             |
-/*--------------------------------------------------------------------------------|
+|---------------------------------------------------------------------------------*/
+
+?>
 
