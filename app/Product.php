@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    public function store(){
+        //Esse Produto vai pertencer a quem: a Loja Store.
+        return $this->belongsTo(Store::class);  //Um produto pode ter em varias lojas 
+
+    }
 
     
 }

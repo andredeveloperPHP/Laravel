@@ -34,8 +34,31 @@ Route::get('/models', function(){
     //return \App\User::where('name', "Jazmyne Bernier I")->get(); //SELECT * FROM users WHERE name = 'Jazmyne Bernier I';
     //return \App\User:?where('name', "Jazmyne Bernier I")->first; // Retorna o primeiro resultado com o metodo first(); 
     //podemos retornar um resultado Paginado com os links disponiveis
+    
+    //mass assingned: 
+    //espera um array associativo, contendo o nome das colunas e os valores que queremos salvar no banco.
+    //$user = \app\User::create([
+    //    'name' => 'raimundo dos santos',
+    //    'email'=> 'raimundo@email.com.br',
+    //    'password'=> bcrypt('123456119')
+    //]);
 
+    //Mass Update:
+
+    
+    //dd($user);  metodo Dump Die que retorna o metodo de criação.
+    //para entendermos o que este metodo nos retornara quando criarmos o usuario.
+    /*
+    $id = 43;
+    $user = \app\user::where('id',$id)->update([
+        'name' => "Andre Laravel 6 "
+
+    ]);
+    */
+    //return \App\user::all();
     return \App\User::all();
+    //return \App\User::where('name', 'raimundo dos santos')->get();
+
 
 
 });
