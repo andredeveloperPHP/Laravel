@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Store extends Model
 {
     protected $fillable = ['name','description', 'phone', 'mobile_phone','slug'];
-    //referenciando o Model User
+    //referenciando o Model User:
   public function user(){
       return $this->belongsTo(User::class);   //Uma Loja pode ter muitos Produtos 1:N  Um para Muitos;
   }   //ele irá procurar do User_id

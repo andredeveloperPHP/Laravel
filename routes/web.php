@@ -56,8 +56,24 @@ Route::get('/models', function(){
     ]);
     */
     //return \App\user::all();
+    //$user = \App\User::find(4);
+
+    //dd($user->store()->count()); //retorna um objeto unico.
+    //No caso se for muitos pra muitos, ele vai retornar varios dados no caso o objeto da ligação.()Collection();
+
+    //como eu faço pra pegar os produtos de uma loja?
+    //$loja = \App\Store::find(4);
+    //dd($loja->products());
+
+    //Pegar as categorias de uma loja, ou as Lojas de uma categoria:
+    //$categoria =  \App\category::find(1);
+    //$categoria->products;  //trabalhando com muitos pra muitos, retornar uma coleção de dados
+    //Quando for HasOne ou BelongsTo estariamos retornando o objeto em Questão.
+
     return \App\User::all();
     //return \App\User::where('name', 'raimundo dos santos')->get();
+
+
 
 
 
