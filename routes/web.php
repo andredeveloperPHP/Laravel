@@ -55,6 +55,7 @@ Route::get('/models', function(){
 
     ]);
     */
+
     //return \App\user::all();
     //$user = \App\User::find(4);
 
@@ -69,12 +70,37 @@ Route::get('/models', function(){
     //$categoria =  \App\category::find(1);
     //$categoria->products;  //trabalhando com muitos pra muitos, retornar uma coleção de dados
     //Quando for HasOne ou BelongsTo estariamos retornando o objeto em Questão.
+    /*--------------------------------------------------------|
+    | 1° Criaremos uma Loja para um Usuario                   |
+    | 2° Criaremos um Produto para uma Loja                   |
+    | 3° Criar uma Categoria                                  |
+    | 4° Adicionar um Produto para uma Categoria ou Vice-Versa|
+    |---------------------------------------------------------*/
 
-    return \App\User::all();
+
+    //$user = \App\User::find(10);
+    //$store = $user->store()->create(
+    //    [
+    //        'name' => 'Loja Teste',
+    //        'description' => 'Loja Teste de Produtos de Informatica',
+    //        'mobile_phone' => 'XX-XXXXX-XXXX',
+    //        'phone' => 'XX-XXXXX-XXXX',
+    //        'slug' => 'loja-teste'
+
+    //    ]);
+    //    dd($store);
+
+    $store = \App\Store::find(41);
+    $product = $store->products()->create([
+        'name' => 'Notebook Dell ',
+        'description' =>'Core I5 10GB',
+        'body' => 'Qualquer Coisa... ',
+        'price' =>2999.90,
+        'slug' => 'notebook-dell'
+    ]);
+    dd($product);
+
+    //return \App\User::all();
     //return \App\User::where('name', 'raimundo dos santos')->get();
-
-
-
-
 
 });
