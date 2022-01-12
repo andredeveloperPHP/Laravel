@@ -1,16 +1,18 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Rotas Web:
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+|--------------------------------------------------------------------------|
+| Rotas Web:                                                               | 
+|--------------------------------------------------------------------------|
+| Aqui é onde você pode registrar rotas da web para seu aplicativo. Esses  |
+| as rotas são carregadas pelo RouteServiceProvider dentro de um grupo que |
+| contém o grupo de middleware "web". Agora crie algo grande!              |
+|                                                                          | 
+|--------------------------------------------------------------------------|
 */
-/*...*/
+
+
+use App\category;
 
 Route::get('/', function () {
     return view('welcome');
@@ -90,17 +92,46 @@ Route::get('/models', function(){
     //    ]);
     //    dd($store);
 
-    $store = \App\Store::find(41);
-    $product = $store->products()->create([
-        'name' => 'Notebook Dell ',
-        'description' =>'Core I5 10GB',
-        'body' => 'Qualquer Coisa... ',
-        'price' =>2999.90,
-        'slug' => 'notebook-dell'
-    ]);
-    dd($product);
+    //$store = \App\Store::find(41);
+    //$product = $store->Products()->create([
+    //    'name' => 'Notebook Dell ',
+    //    'description' =>'Core I5 10GB',
+    //    'body' => 'Qualquer Coisa... ',
+    //    'price' =>2999.90,
+    //    'slug' => 'notebook-dell'
+    //]);
+    //dd($product);
 
-    //return \App\User::all();
+    /*$category = \App\category::create([
+        'name' => 'games',
+        'description' => '',
+        'slug' => 'games'
+    ]);
+
+    $category = \App\category::create([
+        'name' => 'Notebooks',
+        'description' => '',
+        'slug' => 'Notebooks'
+    ]);
+ 
+    dd($category);
+    */
+
+    //$product = \App\Product::find(49);
+    //adicionar pra esse produto 49 um ID (1);
+   
+
+    
+    //return \App\category::all();
+
+    return \App\User::all();
     //return \App\User::where('name', 'raimundo dos santos')->get();
 
 });
+
+//Route::get
+//Route::post
+//Route::put
+//Route::patch
+//Route::delete
+//Route::options
