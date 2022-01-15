@@ -13,10 +13,12 @@
 
 
 use App\category;
+use App\Http\Controllers\Controller;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
     /*---------------------------------------------------------
     | O active Record permite trabalhar as colunas do banco
     | como se fosse atributos da minha classe:
@@ -129,9 +131,41 @@ Route::get('/models', function(){
 
 });
 
+
 //Route::get
 //Route::post
 //Route::put
 //Route::patch
 //Route::delete
 //Route::options
+
+//Então esse metodo que vemos aqui em cima GET, recebendo um parametro, nome da Rota, e um callback no segundo parametro
+//serve pra qualquer um desses aqui abaixo ou seja:
+/*
+1° Get eu recupero as coisas
+2° Post eu crio alguma coisa
+3° Put Atualização
+4° Patch Atulizações
+5° Delete Remoção
+6° Options ele me retorna quais cabeçalhos aquela rota especifica ela responde.
+*/ 
+//vamos começar a mapear,
+
+
+//Organizando as Rotas:
+
+Route::prefix('admin')->namespace('admin')->group(function()
+{
+Route::prefix('stores')->group(function()
+{
+Route::get('/','StoreController@index');
+Route::get('/create','StoreController@create');
+Route::post('/store','StoreController@store');
+
+    });
+
+});
+
+
+
+
