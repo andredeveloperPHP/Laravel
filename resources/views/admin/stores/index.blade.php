@@ -1,22 +1,28 @@
-<table>
-    <th>#</th>
-    <th>Loja</th>
-    
-    <th>Ações</th>
+@extends('layout.app')
 
-</table>
-<tbody>
-   @foreach($stores as $store)
-   <tr>
-        <td>{{$store->id}}</td>
-        <td>{{$store->name}}</td><br>
-        <td></td>
-    </tr>
+@section('content')
+        <table class="table table-striped">
+            <th>#</th>
+            <th>Loja</th>
+            
+            <th>Ações</th>
 
-   @endforeach
-</tbody>
-{{$stores->links()}} 
+        </table>
+        <tbody>
 
+        @foreach($stores as $store)
+        <tr>
+                <td>{{$store->id}}</td>
+                <td>{{$store->name}}</td><br>
+                <td></td>
+            </tr>
+
+        @endforeach
+        </tbody>
+        </table>
+        
+        {{$stores->links()}}
+@endsection
 <?php
 
 

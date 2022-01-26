@@ -21,7 +21,7 @@ class StoreController extends Controller
     public function create(){
         $users = \App\User::all(['id','name']); //passo um array e os nomes dos campos
 
-        return view('admin.stores.create',compact('users'));
+        return view('admin.stores.create', compact('users'));
     }
 
     //metodo de processamento de criação:
