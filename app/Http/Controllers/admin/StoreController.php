@@ -36,4 +36,22 @@ class StoreController extends Controller
         return $store;
 
     }
+
+    //criação de outro metodo
+
+    public function edit($store){
+
+        $store = \App\User::find($store);
+
+        return view('admin.stores.edit', compact('store'));
+
+    }
+
+    public function update(Request $request, $store){
+       
+        dd($request->all()); //estou dando um dump die aqui pra visualizar
+        
+
+        //return view('admin.store.update', compact('update'));
+    }
 }

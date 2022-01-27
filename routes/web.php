@@ -160,8 +160,10 @@ Route::prefix('stores')->group(function()
 Route::get('/','StoreController@index');
 Route::get('/create','StoreController@create');
 Route::post('/store','StoreController@store');
-Route::get('/create','StoreController@create');
-Route::post('/store','StoreController@store');
+// criando 02 novas rotas:
+
+Route::get('/{store}/edit','StoreController@edit');
+Route::post('/update/{store}','StoreController@update');
     });
 
 });
