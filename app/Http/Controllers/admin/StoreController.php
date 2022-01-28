@@ -49,9 +49,25 @@ class StoreController extends Controller
 
     public function update(Request $request, $store){
        
-        dd($request->all()); //estou dando um dump die aqui pra visualizar
+        $data = $request->all(); //estou dando um dump die aqui pra visualizar
         
+        $store = \App\Store::find($store);
+        $store->update($data);
+
+        return $store;
+
 
         //return view('admin.store.update', compact('update'));
+    }
+
+    //metodo de remoção:
+
+    public function destroy($store)
+    {
+        $store = \App\Store::find($store);
+        $store->delete();
+        return redirect('/admin/stores');
+        //Será redirecionado para nossa tabela nossa Listagem.
+             
     }
 }

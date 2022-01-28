@@ -14,6 +14,7 @@
 
 use App\category;
 use App\Http\Controllers\Controller;
+//use Illuminate\Routing\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -164,6 +165,8 @@ Route::post('/store','StoreController@store');
 
 Route::get('/{store}/edit','StoreController@edit');
 Route::post('/update/{store}','StoreController@update');
+Route::get('/destroy/{store}','StoreController@destroy');
+
     });
 
 });
