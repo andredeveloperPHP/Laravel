@@ -1,30 +1,33 @@
 @extends('layout.app')
 
 @section('content')
-        <table class="table table-striped">
-            <th>#</th>
-            <th>Loja</th>
-            
-            <th>Ações</th>
+        <hr>
+        <br>
+        <a href="{{route('admin.stores.create')}}" class="btn btn-lg btn-success">Criar Loja</a> 
 
+       <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Loja</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach($stores as $store)
+                    <tr>
+                        <td>{{$store->id}}</td>
+                        <td>{{$store->name}}</td>
+                        <td>
+                            <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-warning">EDITAR</a>
+                            <a href="{{route('admin.stores.destroy', ['store' => $store->id])}}" class="btn btn-sm btn-danger">REMOVER</a>
+                        </td>
+                    </tr>
+
+                @endforeach
+            </tbody>
         </table>
-        <tbody>
-
-        @foreach($stores as $store)
-        <tr>
-                <td>{{$store->id}}</td>
-                <td>{{$store->name}}</td><br>
-                <td></td>
-            </tr>
-
-        @endforeach
-        </tbody>
-        </table>
-        
-        {{$stores->links()}}
+       {{$stores->links()}}
+    </thead>
 @endsection
-<?php
-
-
-
-?>

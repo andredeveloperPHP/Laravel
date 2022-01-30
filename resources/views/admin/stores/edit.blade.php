@@ -5,7 +5,8 @@
 @section('content')
 
 <h1>Criar Loja</h1>
-<form action="/admin/stores/update/{{$store->id}}" method="POST" enctype="">
+
+<form action="{{ route('admin.stores.update', ['store' => $store->id])}}" method="POST" enctype="">
     <!-- função CSRF-->
     <input type="hidden" name="_token" value="{{csrf_token()}}">
 
@@ -53,6 +54,4 @@
 </div>
 
 </form>
-
 @endsection
-<!------------------------- fim da section ----------------------------->
