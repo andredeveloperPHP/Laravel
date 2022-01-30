@@ -10,7 +10,9 @@
 <body>
     <div class="container">
         <!-- criar uma anotação de template: -->
+        @include('flash::mensage')
         @yield('content')
+        
     </div>
     
 </body>
